@@ -17,52 +17,49 @@ December 21st 2023
 """
 
 
-# Creating a Hash table, used "Let's Go Hashing!" webinar for reference
-class HashTableCreate:
+class HashMapCreation:
     def __init__(self, initial_capacity=20):
-        # Initializing the hash as a list of empty lists
+        # Initializing the hash map as a list of empty lists
         self.list = []
         for i in range(initial_capacity):
             self.list.append([])
 
-    # Inserting an item into the hash table
     def insert(self, key, item):
-        # Getting the bucket list where key will go (point of insertion)
+        # Determine the bucket index using the hash of the key
         bucket = hash(key) % len(self.list)
-        point_of_insertion = self.list[bucket]
+        # Access the bucket list at the calculated index
+        bucket_list = self.list[bucket]
 
-        # Updating the key if its already in the bucket
-        for kv in point_of_insertion:
+        for kv in bucket_list:
+            # Check if the key already exists in the bucket
             if kv[0] == key:
-                # If found, print(key_value)
+                # If found, update the value associated with the key
                 kv[1] = item
                 return True
 
-            # If key is not in bucket, insert the new key-value item at the end of the list
-            key_value = [key, item]
-            point_of_insertion.append(key_value)
-            return True
+        # If the key doesn't exist in the bucket, add a new key-value pair
+        key_value = [key, item]
+        bucket_list.append(key_value)
+        return True
 
-
-# Looking up an item with a matching key in the hash table
-def lookup(self, key):
-    # Getting the bucket list (niche) where this key would be located, the index is the 'point of lookup'
-    niche = hash(key) % len(self.list)
-    point_of_lookup = self.list[niche]
-
-    # Search of the pair in the bucket list (niche)
-    for pair in point_of_lookup:
-        if key == pair[0]:
-            return pair[1]
-
+    def lookup(self, key):
+        # Determine the bucket index using the hash of the key
+        bucket = hash(key) % len(self.list)
+        # Access the bucket list at the calculated index
+        bucket_list = self.list[bucket]
+        for pair in bucket_list:
+            # Check if the key matches the key in the current key-value pair
+            if key == pair[0]:
+                # Return the associated value if the key is found
+                return pair[1]
+        # Return None if the key is not found in the hash map
         return None
 
+    def hash_remove(self, key):
+        # Determine the bucket index using the hash of the key
+        slot = hash(key) % len(self.list)
+        # Access the bucket list at the calculated index
+        destination = self.list[slot]
 
-# Removing an item with a matching key in the hash table
-def hash_remove(self, key):
-    # Determining the 'point of deletion' the item will be removed from
-    niche = hash(key) % len(self.list)
-    point_of_deletion = self.list[niche]
-# If item is in point of deletion, the item will be removed
-    if key in point_of_deletion:
-        point_of_deletion.remove(key)
+        if key in destination:
+            destination.remove(key)
