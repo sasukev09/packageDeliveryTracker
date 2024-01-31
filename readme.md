@@ -1,3 +1,5 @@
+- First Attempt, December 2023.
+
 Project for Western Governors University C950 - Data Structures and Algorithms II
 
 The scenario is the following:\
