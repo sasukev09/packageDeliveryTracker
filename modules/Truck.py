@@ -15,12 +15,9 @@ Student ID: 010303855
 December 21st 2023
 
 """
-
-
-# Class for truck object creation, named Truck
+# Initializing truck object attributes.
 class Truck:
     def __init__(self, capacity, speed, load, packages, mileage, address, depart_time):
-        # Initializing truck attributes
         self.capacity = capacity
         self.speed = speed
         self.load = load
@@ -30,7 +27,8 @@ class Truck:
         self.depart_time = depart_time
         self.time = depart_time
 
+    # Returning a string representation of truck object.
     def __str__(self):
-        # String representation of the Truck object
-        return "%s, %s, %s, %s, %s, %s, %s" % (self.capacity, self.speed, self.load, self.packages, self.mileage,
-                                               self.address, self.depart_time)
+        return (f"Capacity: {self.capacity} | Speed: {self.speed} | Load: {self.load} | "
+                f"Packages: {self.packages} | Mileage: {self.mileage} | Address: {self.address} | "
+                f"Departure Time: {self.depart_time}")
