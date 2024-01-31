@@ -1,4 +1,4 @@
-- First Attempt, December 2023. Due to the inclusion of an "Expected delivery time' in the program, being out of the requirements, I was asked to redo the project, in a different manner. This program still runs as its supposed to.
+- First Attempt, December 2023. Due to the inclusion of an "Expected delivery time' in the program, being out of the requirements, I was asked to redo the project, in a different manner. This program still runs as It's supposed to.
 
 Project for Western Governors University C950 - Data Structures and Algorithms II
 
